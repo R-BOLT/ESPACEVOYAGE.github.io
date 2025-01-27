@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>site web</title>
+</head>
+<body>
+    <header>
+        <!-- Conteneur principal pour le header avec le logo et la navigation -->
+        <div class="principale">
+            
+            <!-- Logo du site, renvoie à la page "A propos de nous" -->
+            <div class="logo">
+                <!-- Le texte du logo "R-BOLT" avec un lien vers "A propos de nous.html" -->
+                <a href="A propos de nous.html">R<span>-BOLT</span></a>
+            </div>
+    
+            <!-- Menu de navigation avec des liens vers les différentes pages du site -->
+            <ul class="fade-in">
+                <!-- L'élément de menu "Accueil" est actif, donc il a une classe "active" pour être mis en valeur -->
+                <li class="active">
+                    <a href="Acceuil.html">Accueil</a>
+                </li>
+                <li>
+                    <a href="service.html">Service</a>
+                </li>
+                <li>
+                    <a href="portfolio.html">Portofolio</a>
+                </li>
+                <li>
+                    <a href="A propos de nous.html">A propos de nous</a>
+                </li>
+                <li>
+                    <a href="Contact.html">Contact</a>
+                </li>
+            </ul>
+        </div>
+    
+        <!-- Section du titre principal de la page -->
+        <div class="titre">
+            <!-- Le titre affiché ici est "ESPACE VOYAGE". Le texte à la fin aura un effet de frappe dynamique. -->
+            <h1>ESPACE VOYAGE<span class="auto-typing"></span></h1>
+        </div>
+    
+        <!-- Boutons sous le titre -->
+        <div class="boutton">
+            <!-- Le premier bouton renvoie à la page "A propos de nous" -->
+            <a href="A propos de nous.html" class="bnt">VISITER</a>
+            <!-- Le deuxième bouton renvoie à la page "Contact" -->
+            <a href="Contact.html" class="bnt">RESERVER</a>
+        </div>
+    </header>
+    
+    <!-- Chargement de la bibliothèque JavaScript "Typed.js" qui permet de créer un effet de texte animé -->
+    <script src="https://unpkg.com/typed.js@2.1.0/typed.umd.js"></script>
+    
+    <script>
+        // Initialisation de l'effet de texte animé sur l'élément avec la classe "auto-typing"
+        var typed = new Typed('.auto-typing', {
+            // Liste des mots/phrases à afficher dans l'animation
+            strings: ['ESPACE VOYAGE', 'MERCI'], 
+            
+            // Vitesse à laquelle chaque caractère est tapé (100ms par caractère)
+            typeSpeed: 100,
+            
+            // Vitesse à laquelle chaque caractère est effacé (100ms)
+            backSpeed: 100,
+            
+            // Le texte doit boucler indéfiniment
+            loop: true,
+            
+            // Lorsqu'un mot disparaît, il doit s'effacer avec un effet de fondu
+            fadeOut: true,
+            
+            // Classe CSS utilisée pour l'effet de fondu
+            fadeOutClass: 'typed-fade-out',
+            
+            // Délai avant de commencer l'effacement après la fin de l'animation (500ms)
+            fadeOutDelay: 500,
+            
+            // Mélanger aléatoirement les phrases à afficher (les chaînes sont choisies au hasard)
+            shuffle: true,
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,251 @@
+/* Définition des styles globaux */
+*{
+    padding: 0; /* Supprime les marges internes */
+    margin: 0; /* Supprime les marges externes */
+    box-sizing: border-box; /* Inclut les bordures et le padding dans les dimensions */
+    font-family: century; /* Définit la police Century */
+}
+
+/* Style pour l'en-tête */
+header{
+    background-image:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)), url(IMAGE/image\ 1.jpg); /* Image d'arrière-plan avec un dégradé sombre */
+    height: 100vh; /* Hauteur égale à la hauteur de la fenêtre */
+    background-size: cover; /* L'image couvre entièrement l'arrière-plan */
+    background-position: center; /* Centre l'image */
+}
+
+/* Style pour le logo */
+.logo a{
+    color: rgb(250, 212, 0); /* Couleur jaune pour le texte */
+    padding: 0px 20px; /* Espacement interne autour du texte */
+    border: 1px solid #d10a03d0; /* Bordure rouge semi-transparente */
+    position: absolute; /* Positionnement absolu */
+    top: 10px; /* Distance du haut de la page */
+    left: 10px; /* Distance de la gauche de la page */
+    text-transform: uppercase; /* Texte en majuscules */
+    text-decoration: none; /* Supprime le soulignement du lien */
+    font-weight: 900; /* Texte en gras */
+    text-shadow: rgb(0, 0, 0.7); /* Ombre sur le texte */
+}
+.logo span{
+    color: #2d07b4; /* Couleur bleue pour une partie du logo */
+    font-weight: bold; /* Texte en gras */
+    font-size: 2rem; /* Taille de police augmentée */
+}
+
+/* Style pour la liste de navigation */
+ul{
+    list-style: none; /* Supprime les puces de la liste */
+    float: right; /* Aligne la liste à droite */
+    display: flex; /* Affiche les éléments horizontalement */
+    margin-top: 20px; /* Espace au-dessus de la liste */
+}
+
+/* Animation pour les éléments avec la classe fade-in */
+.fade-in{
+    opacity: 0; /* Élément invisible au départ */
+    transform: translateY(20px); /* Déplace l'élément vers le bas */
+    animation: fadeIn 2s forwards; /* Animation pour le faire apparaître */
+}
+@keyframes fadeIn{
+    to{
+        opacity: 1; /* Rétablit l'opacité */
+        transform: translateY(0); /* Replace l'élément à sa position initiale */
+    }
+}
+
+/* Style pour les liens de la navigation */
+ul li a{
+    text-decoration: none; /* Supprime le soulignement */
+    color: #fff; /* Texte en blanc */
+    padding: 10px 20px; /* Espacement interne du lien */
+    text-transform: uppercase; /* Texte en majuscules */
+    border: 1px solid transparent; /* Bordure transparente au départ */
+    margin: 10px; /* Espacement externe autour du lien */
+    font-weight: 500; /* Épaisseur moyenne pour le texte */
+    transition: 0.6s ease; /* Transition fluide sur hover */
+}
+ul li a:hover{
+    background: #fff; /* Fond blanc au survol */
+    color: #000; /* Texte noir au survol */
+}
+ul li.active a{
+    background: #fff; /* Fond blanc pour le lien actif */
+    color: #000; /* Texte noir pour le lien actif */
+}
+
+/* Conteneur principal */
+.principale{
+    max: width 114em; /* Largeur maximale */
+    margin: 0 auto; /* Centre le conteneur */
+}
+
+/* Centrage du titre principal */
+.titre{
+    position: absolute; /* Positionnement absolu */
+    top: 50%; /* Centré verticalement */
+    left: 50%; /* Centré horizontalement */
+    transform: translate(-50%, -50%); /* Ajuste le point de centrage */
+}
+.titre h1{
+    color:#ebc106 ; /* Couleur jaune pour le texte */
+    font-size: 70px; /* Taille très grande pour le titre */
+}
+
+/* Style des boutons */
+.boutton{
+    position: absolute; /* Positionnement absolu */
+    top: 70%; /* Positionnement sous le titre */
+    left: 50%; /* Centré horizontalement */
+    transform: translate(-50%, -50%); /* Ajuste le point de centrage */
+}
+.boutton a{
+    color: #43aa08; /* Texte en vert */
+    text-decoration: none; /* Supprime le soulignement */
+    border: 1px solid #ebc106; /* Bordure jaune */
+    padding: 10px 20px; /* Espacement interne */
+}
+.bnt{
+    transition: 0.6 ease; /* Transition fluide */
+}
+.bnt:hover{
+    background-color: #fff; /* Fond blanc au survol */
+    color: #000; /* Texte noir au survol */
+}
+
+/* Style pour le conteneur avec animation */
+.container{
+    position: relative; /* Position relative pour les pseudo-éléments */
+    width: 400px; /* Largeur du conteneur */
+    height: 600px; /* Hauteur du conteneur */
+    background: #130303; /* Fond noir */
+    border-radius: 8px; /* Coins arrondis */
+    overflow: hidden; /* Cache le contenu qui dépasse */
+}
+.container::before{
+    content: ''; /* Crée un pseudo-élément */
+    position: absolute; /* Position absolue */
+    top: -50%; /* Place en dehors du conteneur */
+    left: -50%; /* Place en dehors du conteneur */
+    width: 380px; /* Largeur du pseudo-élément */
+    height: 420px; /* Hauteur du pseudo-élément */
+    background: linear-gradient(0deg,transparent,#e7be07,#f1f50a); /* Dégradé jaune */
+    transform-origin: bottom right; /* Centre de rotation en bas à droite */
+    animation: animate 7s linear infinite ; /* Animation infinie */
+}
+.container::after{
+    content: ''; /* Crée un deuxième pseudo-élément */
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 380px;
+    height: 420px;
+    background: linear-gradient(0deg,transparent,#d10b0b,  #b33e3e); /* Dégradé rouge */
+    transform-origin: bottom right;
+    animation: animate 7s linear infinite ;
+    animation-delay: 3s; /* Décale le début de l'animation */
+}
+@keyframes animate{
+    100%{
+        transform: rotate(360deg); /* Effectue une rotation complète */
+    }
+}
+
+/* Style pour le formulaire */
+.form{
+    position: absolute; /* Positionnement absolu */
+    inset: 5px; /* Distance égale des bords */
+    border-radius: 8px; /* Coins arrondis */
+    background: #130303; /* Fond noir */
+    z-index: 10; /* Position devant les autres éléments */
+    padding: 40px 50px; /* Espacement interne */
+    display: flex; /* Affiche les éléments en colonne */
+    flex-direction: column; /* Direction de la colonne */
+}
+.form h2{
+    text-align: center; /* Centre le texte */
+    letter-spacing: 0.1em; /* Espacement entre les lettres */
+    color: #310ece; /* Couleur bleue pour le texte */
+}
+.inputbox{
+    position: relative; /* Position relative pour les champs */
+    width: 300px; /* Largeur des champs */
+    margin-top: 35px; /* Espace au-dessus des champs */
+}
+.inputbox input{
+    width: 100%; /* Champs occupant toute la largeur */
+    padding: 20px 10px 10px; /* Espacement interne */
+    background: transparent; /* Fond transparent */
+    border-color: #dbd810; /* Couleur jaune pour la bordure */
+    border-top: none; /* Supprime la bordure supérieure */
+    border-right: none; /* Supprime la bordure droite */
+    border-left: none; /* Supprime la bordure gauche */
+    font-size: 1em; /* Taille normale pour le texte */
+    outline: none; /* Supprime le contour au focus */
+    color: #03fe78; /* Texte vert */
+}
+input[type="submit"]{
+    border: 1px solid #fff; /* Bordure blanche */
+    background: #03fe78; /* Fond vert */
+    color: #fff; /* Texte blanc */
+    cursor: pointer; /* Curseur pointer (main) */
+    margin-top: 20px; /* Espace au-dessus */
+}
+.container{
+    position: relative; /* Position relative */
+    top: 50%; /* Centré verticalement */
+    left: 25%; /* Positionnement à gauche */
+    right: 70%; /* Positionnement à droite */
+    transform: translate(-50%, -50%); /* Ajuste le point de centrage */
+}
+.image-container {
+    display: flex;
+    flex-wrap: wrap; /* Les images vont se replier sur la ligne suivante si elles ne tiennent pas */
+    justify-content: space-around; /* Espacement égal entre les images */
+    gap: 20px; /* Espacement entre les images */
+    padding: 20px;
+}
+
+/* Chaque image dans le conteneur */
+.image-container img {
+    width: 300px; /* Largeur de chaque image */
+    height: auto; /* Hauteur automatique pour garder les proportions */
+    border-radius: 8px; /* Bords arrondis */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre douce sous les images */
+    transition: transform 0.3s ease; /* Effet de zoom lors du survol */
+}
+
+/* Effet de zoom au survol de l'image */
+.image-container img:hover {
+    transform: scale(1.05); /* Agrandir l'image au survol */
+}
+
+        /* Conteneur Grid pour organiser les images */
+        #grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Colonne responsive */
+            gap: 20px; /* Espacement entre les images */
+            padding: 20px;
+        }
+
+        /* Chaque image dans le conteneur */
+        #grid-container img {
+            width: 100%; /* L'image prend toute la largeur de la cellule */
+            height: auto; /* Hauteur automatique pour garder les proportions */
+            border-radius: 8px; /* Bords arrondis */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre douce sous les images */
+            transition: transform 0.3s ease; /* Effet de zoom au survol */
+        }
+
+        /* Effet de zoom au survol de l'image */
+        #grid-container img:hover {
+            transform: scale(1.05); /* Agrandir l'image au survol */
+             }
+
+
+
+
+    
+
+
+
